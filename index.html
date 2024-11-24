@@ -19,9 +19,8 @@
         <!-- Video Asset -->
         <video
           id="video"
-          src="./video.mp4"
+          src="video.mp4"
           autoplay
-          muted
           loop
           playsinline
           preload="auto"
@@ -44,19 +43,8 @@
           height="0.5625"
           rotation="0 0 0"
           autoplay
-          muted
-          material="shader: standard;"
         ></a-video>
       </a-entity>
     </a-scene>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const video = document.querySelector("#video");
-        video.play().catch((err) => {
-          console.error("Video playback error:", err);
-        });
-      });
-    </script>
   </body>
 </html>

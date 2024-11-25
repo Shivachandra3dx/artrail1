@@ -14,16 +14,16 @@
     >
       <a-assets>
         <!-- Marker Image -->
-        <img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/card-example/card.png" />
+        <img id="card" src="./targets.mind" />
 
         <!-- Video Asset -->
         <video
           id="video"
-          src="video.mp4"
+          src="./video.mp4.mp4"
           autoplay
-          muted
           loop
           playsinline
+          muted
           preload="auto"
         ></video>
       </a-assets>
@@ -33,20 +33,25 @@
 
       <!-- Marker Target -->
       <a-entity mindar-image-target="targetIndex: 0">
-        <!-- Marker Display -->
-        <a-plane src="#card" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
-
         <!-- Video Playback -->
         <a-video
           src="#video"
-          position="0 0 0.1"
+          position="0 0 0"
           width="1"
           height="0.5625"
           rotation="0 0 0"
           autoplay
-          muted
         ></a-video>
       </a-entity>
     </a-scene>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const video = document.querySelector("#video");
+        video.play().catch((error) => {
+          console.error("Error playing video:", error);
+        });
+      });
+    </script>
   </body>
 </html>
